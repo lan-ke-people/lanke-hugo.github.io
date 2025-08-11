@@ -74,3 +74,12 @@ free -h
 # 磁盘使用
 df -h
 ```
+
+## 其他
+```bash
+# 修改文件读写权限
+chmod -R 777 fload_file_name/
+
+# 磁盘使用
+df -h
+```

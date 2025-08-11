@@ -76,6 +76,14 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 磁盘使用</span>
 </span></span><span class="line"><span class="cl">df -h
+</span></span></code></pre></div><h2 id="其他">
+<a class="header-anchor" href="#%e5%85%b6%e4%bb%96"></a>
+其他
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 修改文件读写权限</span>
+</span></span><span class="line"><span class="cl">chmod -R <span class="m">777</span> fload_file_name/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 磁盘使用</span>
+</span></span><span class="line"><span class="cl">df -h
 </span></span></code></pre></div>
         
         <hr><p>本文2022-10-15首发于<a href='https://lan-ke-people.github.io/lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2022-10-20</p>]]>
