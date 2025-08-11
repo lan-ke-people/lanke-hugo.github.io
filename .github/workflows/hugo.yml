@@ -1,0 +1,36 @@
+name: Deploy Hugo Site
+
+on:
+  push:
+    branches: [ "main" ]  # 触发分支（改为你的源码分支）
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 检出代码（含子模块）
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive  # 重要！若使用主题子模块必加
+          fetch-depth: 0
+
+      # 2. 安装 Hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.148.2'  # 替换你的 Hugo 版本
+          extended: true          # 是否使用扩展版
+
+      # 3. 构建静态页面
+      - name: Build
+        run: hugo --minify --gc
+
+      # 4. 部署到 gh-pages 分支
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.PAT_TOKEN }}  # 自动生成，无需修改
+          publish_dir: ./public    # Hugo 输出目录
+          publish_branch: gh-pages # 部署分支（自动创建）
+          # cname: wxz.blog.com  # 若用自定义域名取消注释
