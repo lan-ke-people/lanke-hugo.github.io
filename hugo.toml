@@ -1,4 +1,4 @@
-baseURL = 'https://lanke-hugo.github.io/'
+baseURL = 'https://lan-ke-people.github.io/lanke-hugo.github.io/'
 languageCode = 'zh-CN'
 title = '烂柯的 Blog'
 theme = 'hugo-theme-reimu-blog'

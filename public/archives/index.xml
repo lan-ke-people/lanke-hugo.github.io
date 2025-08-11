@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>烂柯的 Blog</title>
-    <link>https://lanke-hugo.github.io/archives/</link>
+    <link>https://lan-ke-people.github.io/lanke-hugo.github.io/archives/</link>
     <description>Recent content from 烂柯的 Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
@@ -15,7 +15,7 @@
     <lastBuildDate></lastBuildDate>
     
     
-    <atom:link href="https://lanke-hugo.github.io/archives/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://lan-ke-people.github.io/lanke-hugo.github.io/archives/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     

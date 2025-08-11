@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>烂柯的 Blog</title>
-    <link>https://lanke-hugo.github.io/</link>
+    <link>https://lan-ke-people.github.io/lanke-hugo.github.io/</link>
     <description>Recent content from 烂柯的 Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Wed, 15 Mar 2023 11:00:00 -0700</lastBuildDate>
     
     
-    <atom:link href="https://lanke-hugo.github.io/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://lan-ke-people.github.io/lanke-hugo.github.io/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>Hello World</title>
-      <link>https://lanke-hugo.github.io/post/hello/</link>
+      <link>https://lan-ke-people.github.io/lanke-hugo.github.io/post/hello/</link>
       <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
       <author>2361303523@qq.com (烂柯)</author>
-      <guid>https://lanke-hugo.github.io/post/hello/</guid>
+      <guid>https://lan-ke-people.github.io/lanke-hugo.github.io/post/hello/</guid>
       <description>
         <![CDATA[<h1>Hello World</h1><p>作者：烂柯（2361303523@qq.com）</p>
         
@@ -70,7 +70,7 @@ Run server
 </span></span><span class="line"><span class="cl">prev: /tutorials/automated-deployments  <span class="c1"># 上一篇博客地址</span>
 </span></span></code></pre></div>
         
-        <hr><p>本文2023-03-15首发于<a href='https://lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2023-03-15</p>]]>
+        <hr><p>本文2023-03-15首发于<a href='https://lan-ke-people.github.io/lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2023-03-15</p>]]>
       </description>
       
     </item>
