@@ -12,7 +12,7 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Wed, 15 Mar 2023 11:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate>
     
     
     <atom:link href="https://lan-ke-people.github.io/lanke-hugo.github.io/index.xml" rel="self" type="application/rss&#43;xml" />
@@ -22,13 +22,257 @@
     
 
     <item>
-      <title>Hello World</title>
+      <title>nvm 常用命令</title>
+      <link>https://lan-ke-people.github.io/lanke-hugo.github.io/post/nvm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 28 Jun 2024 00:00:00 &#43;0000</pubDate>
+      <author>2361303523@qq.com (烂柯)</author>
+      <guid>https://lan-ke-people.github.io/lanke-hugo.github.io/post/nvm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>
+        <![CDATA[<h1>nvm 常用命令</h1><p>作者：烂柯（2361303523@qq.com）</p>
+        
+          <h1 id="nvm-常用命令">
+<a class="header-anchor" href="#nvm-%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4"></a>
+nvm 常用命令
+</h1><h3 id="显示可以安装的所有nodejs的版本">
+<a class="header-anchor" href="#%e6%98%be%e7%a4%ba%e5%8f%af%e4%bb%a5%e5%ae%89%e8%a3%85%e7%9a%84%e6%89%80%e6%9c%89nodejs%e7%9a%84%e7%89%88%e6%9c%ac"></a>
+显示可以安装的所有node.js的版本
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm list available
+</span></span></code></pre></div><h3 id="安装指定版本的nodejs">
+<a class="header-anchor" href="#%e5%ae%89%e8%a3%85%e6%8c%87%e5%ae%9a%e7%89%88%e6%9c%ac%e7%9a%84nodejs"></a>
+安装指定版本的Node.js
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm install 16.13.1
+</span></span></code></pre></div><h3 id="查看已安装的nodejs版本">
+<a class="header-anchor" href="#%e6%9f%a5%e7%9c%8b%e5%b7%b2%e5%ae%89%e8%a3%85%e7%9a%84nodejs%e7%89%88%e6%9c%ac"></a>
+查看已安装的node.js版本
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm list
+</span></span></code></pre></div><h3 id="切换到指定的nodejs版本">
+<a class="header-anchor" href="#%e5%88%87%e6%8d%a2%e5%88%b0%e6%8c%87%e5%ae%9a%e7%9a%84nodejs%e7%89%88%e6%9c%ac"></a>
+切换到指定的nodejs版本
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm use 16.13.1
+</span></span></code></pre></div><h3 id="查看本电脑上所有的node版本">
+<a class="header-anchor" href="#%e6%9f%a5%e7%9c%8b%e6%9c%ac%e7%94%b5%e8%84%91%e4%b8%8a%e6%89%80%e6%9c%89%e7%9a%84node%e7%89%88%e6%9c%ac"></a>
+查看本电脑上所有的node版本
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm list
+</span></span></code></pre></div><h3 id="查看已经安装的版本">
+<a class="header-anchor" href="#%e6%9f%a5%e7%9c%8b%e5%b7%b2%e7%bb%8f%e5%ae%89%e8%a3%85%e7%9a%84%e7%89%88%e6%9c%ac"></a>
+查看已经安装的版本
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm list installed
+</span></span></code></pre></div><h3 id="查看网络可以安装的版本">
+<a class="header-anchor" href="#%e6%9f%a5%e7%9c%8b%e7%bd%91%e7%bb%9c%e5%8f%af%e4%bb%a5%e5%ae%89%e8%a3%85%e7%9a%84%e7%89%88%e6%9c%ac"></a>
+查看网络可以安装的版本
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm list available
+</span></span></code></pre></div><h3 id="安装最新版本nodejs">
+<a class="header-anchor" href="#%e5%ae%89%e8%a3%85%e6%9c%80%e6%96%b0%e7%89%88%e6%9c%acnodejs"></a>
+安装最新版本Node.js
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm install
+</span></span></code></pre></div><h3 id="切换使用指定的版本node">
+<a class="header-anchor" href="#%e5%88%87%e6%8d%a2%e4%bd%bf%e7%94%a8%e6%8c%87%e5%ae%9a%e7%9a%84%e7%89%88%e6%9c%acnode"></a>
+切换使用指定的版本node
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm use &lt;version&gt;
+</span></span></code></pre></div><h3 id="列出所有版本">
+<a class="header-anchor" href="#%e5%88%97%e5%87%ba%e6%89%80%e6%9c%89%e7%89%88%e6%9c%ac"></a>
+列出所有版本
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm ls
+</span></span></code></pre></div><h3 id="显示当前版本">
+<a class="header-anchor" href="#%e6%98%be%e7%a4%ba%e5%bd%93%e5%89%8d%e7%89%88%e6%9c%ac"></a>
+显示当前版本
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm current
+</span></span></code></pre></div><h3 id="给不同的版本号添加别名">
+<a class="header-anchor" href="#%e7%bb%99%e4%b8%8d%e5%90%8c%e7%9a%84%e7%89%88%e6%9c%ac%e5%8f%b7%e6%b7%bb%e5%8a%a0%e5%88%ab%e5%90%8d"></a>
+给不同的版本号添加别名
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm <span class="nb">alias</span> &lt;name&gt; &lt;version&gt;
+</span></span></code></pre></div><h3 id="删除已定义的别名">
+<a class="header-anchor" href="#%e5%88%a0%e9%99%a4%e5%b7%b2%e5%ae%9a%e4%b9%89%e7%9a%84%e5%88%ab%e5%90%8d"></a>
+删除已定义的别名
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm <span class="nb">unalias</span> &lt;name&gt;
+</span></span></code></pre></div><h3 id="重新全局安装指定版本号的npm包">
+<a class="header-anchor" href="#%e9%87%8d%e6%96%b0%e5%85%a8%e5%b1%80%e5%ae%89%e8%a3%85%e6%8c%87%e5%ae%9a%e7%89%88%e6%9c%ac%e5%8f%b7%e7%9a%84npm%e5%8c%85"></a>
+重新全局安装指定版本号的npm包
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm reinstall-packages &lt;version&gt;
+</span></span></code></pre></div><h3 id="打开nodejs控制">
+<a class="header-anchor" href="#%e6%89%93%e5%bc%80nodejs%e6%8e%a7%e5%88%b6"></a>
+打开nodejs控制
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm on
+</span></span></code></pre></div><h3 id="关闭nodejs控制">
+<a class="header-anchor" href="#%e5%85%b3%e9%97%adnodejs%e6%8e%a7%e5%88%b6"></a>
+关闭nodejs控制
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm off
+</span></span></code></pre></div><h3 id="查看设置与代理">
+<a class="header-anchor" href="#%e6%9f%a5%e7%9c%8b%e8%ae%be%e7%bd%ae%e4%b8%8e%e4%bb%a3%e7%90%86"></a>
+查看设置与代理
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm proxy
+</span></span></code></pre></div><h3 id="设置或查看node_mirror">
+<a class="header-anchor" href="#%e8%ae%be%e7%bd%ae%e6%88%96%e6%9f%a5%e7%9c%8bnode_mirror"></a>
+设置或查看node_mirror
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm node_mirror <span class="o">[</span>url<span class="o">]</span>
+</span></span></code></pre></div><h3 id="设置或查看npm_mirror">
+<a class="header-anchor" href="#%e8%ae%be%e7%bd%ae%e6%88%96%e6%9f%a5%e7%9c%8bnpm_mirror"></a>
+设置或查看npm_mirror
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm npm_mirror <span class="o">[</span>url<span class="o">]</span>
+</span></span></code></pre></div><h3 id="卸载制定的版本">
+<a class="header-anchor" href="#%e5%8d%b8%e8%bd%bd%e5%88%b6%e5%ae%9a%e7%9a%84%e7%89%88%e6%9c%ac"></a>
+卸载制定的版本
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm uninstall &lt;version&gt;
+</span></span></code></pre></div><h3 id="切换制定的node版本和位数">
+<a class="header-anchor" href="#%e5%88%87%e6%8d%a2%e5%88%b6%e5%ae%9a%e7%9a%84node%e7%89%88%e6%9c%ac%e5%92%8c%e4%bd%8d%e6%95%b0"></a>
+切换制定的node版本和位数
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm use <span class="o">[</span>version<span class="o">]</span> <span class="o">[</span>arch<span class="o">]</span>
+</span></span></code></pre></div><h3 id="设置和查看root路径">
+<a class="header-anchor" href="#%e8%ae%be%e7%bd%ae%e5%92%8c%e6%9f%a5%e7%9c%8broot%e8%b7%af%e5%be%84"></a>
+设置和查看root路径
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm root <span class="o">[</span>path<span class="o">]</span>
+</span></span></code></pre></div><h3 id="查看当前的nvm版本">
+<a class="header-anchor" href="#%e6%9f%a5%e7%9c%8b%e5%bd%93%e5%89%8d%e7%9a%84nvm%e7%89%88%e6%9c%ac"></a>
+查看当前的nvm版本
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm version
+</span></span></code></pre></div>
+        
+        <hr><p>本文2024-06-28首发于<a href='https://lan-ke-people.github.io/lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2024-06-28</p>]]>
+      </description>
+      
+        <category>前端开发</category><category>环境配置</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>git 常用命令</title>
+      <link>https://lan-ke-people.github.io/lanke-hugo.github.io/post/git%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Wed, 16 Aug 2023 00:00:00 &#43;0000</pubDate>
+      <author>2361303523@qq.com (烂柯)</author>
+      <guid>https://lan-ke-people.github.io/lanke-hugo.github.io/post/git%E5%91%BD%E4%BB%A4/</guid>
+      <description>
+        <![CDATA[<h1>git 常用命令</h1><p>作者：烂柯（2361303523@qq.com）</p>
+        
+          <p>git init</p>
+<p>git remote add origin <a href="https://gitee.com/your_gitee_username/your_repo_name.git">https://gitee.com/your_gitee_username/your_repo_name.git</a></p>
+<p>git add .
+git commit -m &ldquo;Initial commit&rdquo;  # 提交信息可以根据您的需要修改</p>
+<p>git push -u origin master</p>
+<p>git pull origin master</p>
+<p>git add .
+git commit -m &ldquo;Merge remote changes&rdquo;</p>
+<p>git push origin master
+查看改变的文件列表
+git status</p>
+<p>这个错误提示表明您尝试将两个没有共同祖先的分支进行合并，因此Git拒绝了此次合并。出现这种情况的原因可能是因为您的本地仓库和远程仓库在历史上没有共同的提交点。这通常在以下情况下发生：</p>
+        
+        <hr><p>本文2023-08-16首发于<a href='https://lan-ke-people.github.io/lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2023-08-16</p>]]>
+      </description>
+      
+        <category>环境配置</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>docker 常用命令</title>
+      <link>https://lan-ke-people.github.io/lanke-hugo.github.io/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Wed, 16 Aug 2023 00:00:00 &#43;0000</pubDate>
+      <author>2361303523@qq.com (烂柯)</author>
+      <guid>https://lan-ke-people.github.io/lanke-hugo.github.io/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>
+        <![CDATA[<h1>docker 常用命令</h1><p>作者：烂柯（2361303523@qq.com）</p>
+        
+          <p>1
+检查docker版本
+docker -v
+2
+查看docker已有镜像
+sudo docker images
+3
+设置docker开机启动
+sudo systemctl enable docker</p>
+<p>查看docker服务状态是否启动
+sudo systemctl status docker</p>
+<p>启动docker服务
+sudo systemctl start docker</p>
+        
+        <hr><p>本文2023-08-16首发于<a href='https://lan-ke-people.github.io/lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2023-08-16</p>]]>
+      </description>
+      
+        <category>环境配置</category><category>容器化部署</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>Linux运维常用命令速查</title>
+      <link>https://lan-ke-people.github.io/lanke-hugo.github.io/post/linux%E9%83%A8%E7%BD%B2%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 15 Oct 2022 00:00:00 &#43;0000</pubDate>
+      <author>2361303523@qq.com (烂柯)</author>
+      <guid>https://lan-ke-people.github.io/lanke-hugo.github.io/post/linux%E9%83%A8%E7%BD%B2%E5%91%BD%E4%BB%A4/</guid>
+      <description>
+        <![CDATA[<h1>Linux运维常用命令速查</h1><p>作者：烂柯（2361303523@qq.com）</p>
+        
+          <h2 id="服务启动命令">
+<a class="header-anchor" href="#%e6%9c%8d%e5%8a%a1%e5%90%af%e5%8a%a8%e5%91%bd%e4%bb%a4"></a>
+服务启动命令
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Java应用</span>
+</span></span><span class="line"><span class="cl">nohup java -jar XXX.jar <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Nacos</span>
+</span></span><span class="line"><span class="cl">nohup sh startup.sh -m standalone <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Redis</span>
+</span></span><span class="line"><span class="cl">./redis-server redis.conf <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Nginx</span>
+</span></span><span class="line"><span class="cl">./sbin/nginx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># RocketMQ</span>
+</span></span><span class="line"><span class="cl">nohup sh mqnamesrv <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">nohup sh mqbroker -n 127.0.0.1:9876 -c broker.conf <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 关闭RocketMQ</span>
+</span></span><span class="line"><span class="cl">sh mqshutdown broker
+</span></span><span class="line"><span class="cl">sh mqshutdown namesrv
+</span></span></code></pre></div><h2 id="进程管理命令">
+<a class="header-anchor" href="#%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86%e5%91%bd%e4%bb%a4"></a>
+进程管理命令
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看进程</span>
+</span></span><span class="line"><span class="cl">ps -aux <span class="p">|</span> grep java
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 终止进程</span>
+</span></span><span class="line"><span class="cl"><span class="nb">kill</span> -9 <span class="o">[</span>PID<span class="o">]</span>
+</span></span></code></pre></div><h2 id="端口与网络">
+<a class="header-anchor" href="#%e7%ab%af%e5%8f%a3%e4%b8%8e%e7%bd%91%e7%bb%9c"></a>
+端口与网络
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看端口占用</span>
+</span></span><span class="line"><span class="cl">netstat -ntulp <span class="p">|</span> grep <span class="m">3306</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看进程端口</span>
+</span></span><span class="line"><span class="cl">netstat -nap <span class="p">|</span> grep <span class="o">[</span>PID<span class="o">]</span>
+</span></span></code></pre></div><h2 id="资源监控">
+<a class="header-anchor" href="#%e8%b5%84%e6%ba%90%e7%9b%91%e6%8e%a7"></a>
+资源监控
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 内存使用</span>
+</span></span><span class="line"><span class="cl">free -h
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 磁盘使用</span>
+</span></span><span class="line"><span class="cl">df -h
+</span></span></code></pre></div>
+        
+        <hr><p>本文2022-10-15首发于<a href='https://lan-ke-people.github.io/lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2022-10-20</p>]]>
+      </description>
+      
+        <category>Linux运维</category><category>服务管理</category><category>系统监控</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>Hello Hugo</title>
       <link>https://lan-ke-people.github.io/lanke-hugo.github.io/post/hello/</link>
-      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
+      <pubDate>Tue, 27 Feb 2001 11:00:00 -0700</pubDate>
       <author>2361303523@qq.com (烂柯)</author>
       <guid>https://lan-ke-people.github.io/lanke-hugo.github.io/post/hello/</guid>
       <description>
-        <![CDATA[<h1>Hello World</h1><p>作者：烂柯（2361303523@qq.com）</p>
+        <![CDATA[<h1>Hello Hugo</h1><p>作者：烂柯（2361303523@qq.com）</p>
         
           <p>💘 博麗 霊夢 💘</p>
 <p>Welcome to My Blog</p>
@@ -38,11 +282,12 @@ Quick Start
 </h2><h3 id="create-a-new-post">
 <a class="header-anchor" href="#create-a-new-post"></a>
 Create a new post
-</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ hugo new <span class="s2">&#34;My New Post&#34;</span>
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new <span class="s2">&#34;My New Post&#34;</span>
 </span></span></code></pre></div><h3 id="run-server">
 <a class="header-anchor" href="#run-server"></a>
 Run server
-</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ hugo server
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo server
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new <span class="s2">&#34;My New Post&#34;</span>
 </span></span></code></pre></div><h3 id="常用属性">
 <a class="header-anchor" href="#%e5%b8%b8%e7%94%a8%e5%b1%9e%e6%80%a7"></a>
 常用属性
@@ -70,7 +315,7 @@ Run server
 </span></span><span class="line"><span class="cl">prev: /tutorials/automated-deployments  <span class="c1"># 上一篇博客地址</span>
 </span></span></code></pre></div>
         
-        <hr><p>本文2023-03-15首发于<a href='https://lan-ke-people.github.io/lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2023-03-15</p>]]>
+        <hr><p>本文2001-02-27首发于<a href='https://lan-ke-people.github.io/lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2001-02-27</p>]]>
       </description>
       
     </item>

@@ -1,9 +1,9 @@
 ---
-title: 'Hello World'
+title: 'Hello Hugo'
 cover: false
 
-date: 2023-03-15T11:00:00-07:00
-lastmod: 2023-03-15T11:00:00-07:00
+date: 2001-02-27T11:00:00-07:00
+lastmod: 2001-02-27T11:00:00-07:00
 ---
 
 💘 博麗 霊夢 💘
@@ -15,13 +15,17 @@ Welcome to My Blog
 ### Create a new post
 
 ``` bash
-$ hugo new "My New Post"
+hugo new "My New Post"
 ```
 
 ### Run server
 
 ``` bash
-$ hugo server
+hugo server
+```
+
+```bash
+hugo new "My New Post"
 ```
 
 ### 常用属性

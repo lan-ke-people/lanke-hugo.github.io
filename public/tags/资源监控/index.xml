@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>资源监控 on 烂柯的 Blog</title>
+    <link>https://lan-ke-people.github.io/lanke-hugo.github.io/tags/%E8%B5%84%E6%BA%90%E7%9B%91%E6%8E%A7/</link>
+    <description>Recent content from 烂柯的 Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    
+    <managingEditor>2361303523@qq.com (烂柯)</managingEditor>
+    <webMaster>2361303523@qq.com (烂柯)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Thu, 20 Oct 2022 00:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="https://lan-ke-people.github.io/lanke-hugo.github.io/tags/%E8%B5%84%E6%BA%90%E7%9B%91%E6%8E%A7/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>Linux运维常用命令速查</title>
+      <link>https://lan-ke-people.github.io/lanke-hugo.github.io/post/linux%E9%83%A8%E7%BD%B2%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 15 Oct 2022 00:00:00 &#43;0000</pubDate>
+      <author>2361303523@qq.com (烂柯)</author>
+      <guid>https://lan-ke-people.github.io/lanke-hugo.github.io/post/linux%E9%83%A8%E7%BD%B2%E5%91%BD%E4%BB%A4/</guid>
+      <description>
+        <![CDATA[<h1>Linux运维常用命令速查</h1><p>作者：烂柯（2361303523@qq.com）</p>
+        
+          <h2 id="服务启动命令">
+<a class="header-anchor" href="#%e6%9c%8d%e5%8a%a1%e5%90%af%e5%8a%a8%e5%91%bd%e4%bb%a4"></a>
+服务启动命令
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Java应用</span>
+</span></span><span class="line"><span class="cl">nohup java -jar XXX.jar <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Nacos</span>
+</span></span><span class="line"><span class="cl">nohup sh startup.sh -m standalone <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Redis</span>
+</span></span><span class="line"><span class="cl">./redis-server redis.conf <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Nginx</span>
+</span></span><span class="line"><span class="cl">./sbin/nginx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># RocketMQ</span>
+</span></span><span class="line"><span class="cl">nohup sh mqnamesrv <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">nohup sh mqbroker -n 127.0.0.1:9876 -c broker.conf <span class="p">&amp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 关闭RocketMQ</span>
+</span></span><span class="line"><span class="cl">sh mqshutdown broker
+</span></span><span class="line"><span class="cl">sh mqshutdown namesrv
+</span></span></code></pre></div><h2 id="进程管理命令">
+<a class="header-anchor" href="#%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86%e5%91%bd%e4%bb%a4"></a>
+进程管理命令
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看进程</span>
+</span></span><span class="line"><span class="cl">ps -aux <span class="p">|</span> grep java
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 终止进程</span>
+</span></span><span class="line"><span class="cl"><span class="nb">kill</span> -9 <span class="o">[</span>PID<span class="o">]</span>
+</span></span></code></pre></div><h2 id="端口与网络">
+<a class="header-anchor" href="#%e7%ab%af%e5%8f%a3%e4%b8%8e%e7%bd%91%e7%bb%9c"></a>
+端口与网络
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看端口占用</span>
+</span></span><span class="line"><span class="cl">netstat -ntulp <span class="p">|</span> grep <span class="m">3306</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看进程端口</span>
+</span></span><span class="line"><span class="cl">netstat -nap <span class="p">|</span> grep <span class="o">[</span>PID<span class="o">]</span>
+</span></span></code></pre></div><h2 id="资源监控">
+<a class="header-anchor" href="#%e8%b5%84%e6%ba%90%e7%9b%91%e6%8e%a7"></a>
+资源监控
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 内存使用</span>
+</span></span><span class="line"><span class="cl">free -h
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 磁盘使用</span>
+</span></span><span class="line"><span class="cl">df -h
+</span></span></code></pre></div>
+        
+        <hr><p>本文2022-10-15首发于<a href='https://lan-ke-people.github.io/lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2022-10-20</p>]]>
+      </description>
+      
+        <category>Linux运维</category><category>服务管理</category><category>系统监控</category>
+      
+    </item>
+    
+  </channel>
+</rss>

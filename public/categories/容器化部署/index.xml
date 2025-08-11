@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>容器化部署 on 烂柯的 Blog</title>
+    <link>https://lan-ke-people.github.io/lanke-hugo.github.io/categories/%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</link>
+    <description>Recent content from 烂柯的 Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    
+    <managingEditor>2361303523@qq.com (烂柯)</managingEditor>
+    <webMaster>2361303523@qq.com (烂柯)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Wed, 16 Aug 2023 00:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="https://lan-ke-people.github.io/lanke-hugo.github.io/categories/%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>docker 常用命令</title>
+      <link>https://lan-ke-people.github.io/lanke-hugo.github.io/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Wed, 16 Aug 2023 00:00:00 &#43;0000</pubDate>
+      <author>2361303523@qq.com (烂柯)</author>
+      <guid>https://lan-ke-people.github.io/lanke-hugo.github.io/post/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>
+        <![CDATA[<h1>docker 常用命令</h1><p>作者：烂柯（2361303523@qq.com）</p>
+        
+          <p>1
+检查docker版本
+docker -v
+2
+查看docker已有镜像
+sudo docker images
+3
+设置docker开机启动
+sudo systemctl enable docker</p>
+<p>查看docker服务状态是否启动
+sudo systemctl status docker</p>
+<p>启动docker服务
+sudo systemctl start docker</p>
+        
+        <hr><p>本文2023-08-16首发于<a href='https://lan-ke-people.github.io/lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2023-08-16</p>]]>
+      </description>
+      
+        <category>环境配置</category><category>容器化部署</category>
+      
+    </item>
+    
+  </channel>
+</rss>
