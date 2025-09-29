@@ -53,7 +53,7 @@
   />
   <meta property="article:author" content="烂柯" />
   <meta property="article:published_time" content="2023-08-16T00:00:00&#43;00:00" />
-  <meta property="article:modified_time" content="2023-08-16T00:00:00&#43;00:00" /><meta property="article:tag" content="版本管理开发工具" /><meta name="twitter:card" content="summary" />
+  <meta property="article:modified_time" content="2025-09-29T00:00:00&#43;00:00" /><meta property="article:tag" content="版本管理开发工具" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/lanke-hugo.github.io/" />
 <link rel="shortcut icon" href="/lanke-hugo.github.io/favicon.ico"><link rel="stylesheet" href="/lanke-hugo.github.io/css/main.min.7c658025c1fd976b0c2e36075723bdcd73b21ec9e36d071b9494be615af52024.css" />
 <link
@@ -143,7 +143,12 @@
     ><div class="sidebar-toc-sidebar"><div class="sidebar-toc">
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#第一次提交">第一次提交</a></li>
+    <li><a href="#统计代码行的脚本保存为ps1后缀文件">统计代码行的脚本保存为.ps1后缀文件</a></li>
+  </ul>
+</nav>
   </div>
 </div></div>
           <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -158,17 +163,17 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">7</div>
+    <div>文章</div><div class="sidebar-state-number">8</div>
   </div>
   <a class="sidebar-state-category" href="/lanke-hugo.github.io/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
     <div class="sidebar-state-number">
-      9
+      10
     </div>
   </a>
   <a class="sidebar-state-tag" href="/lanke-hugo.github.io/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">15</div>
+    <div class="sidebar-state-number">16</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -231,7 +236,7 @@
       >2023-08-16</time
     >
     <time style="display: none;" id="post-update-time"
-      >2023-08-16</time
+      >2025-09-29</time
     >
   </span>
 </div>
@@ -242,7 +247,62 @@
       >环境配置</a
     ></div>
 </div>
-    <div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><p>git init</p>
+    <div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><p>git stash            暂存当前修改</p>
+<p>git stash               # 暂存本地修改
+git pull &ndash;rebase origin develop  # 变基式拉取最新代码
+git stash pop           # 恢复本地修改</p>
+<p>git fetch &ndash;all	#刷新获取远程分支</p>
+<p>git branch -vv	#当前追踪的远程分支</p>
+<h2 id="第一次提交">
+<a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4"></a>
+第一次提交
+</h2><p>提交本地修改
+git add .
+git commit -m &ldquo;feat: add wxz feature&rdquo;</p>
+<p>创建并切换分支
+git checkout -b feature/wxz</p>
+<p>推送到远程
+git push -u origin feature/wxz</p>
+<p>若之前暂存了修改
+git stash pop</p>
+<p>git checkout -b feature/wxz	#直接基于当前分支创建并切换到 feature/wxz‌，无需先切换（因为分支不存在），可直接创建并切换：</p>
+<p>#提交代码到新分支
+git add .                      # 添加修改
+git commit -m &ldquo;提交描述&rdquo;        # 提交到本地分支
+git push -u origin feature/wxz # 推送到远程仓库</p>
+<p>git checkout feature/3.10.7.C123  # 切换回原分支
+git merge feature/wxz             # 合并新分支的修改
+git push origin feature/3.10.7.C123 # 推送合并结果</p>
+<p>分支操作决策树</p>
+<p>graph TD     A[当前状态] &ndash;&gt; B{需继续开发新功能?}     B &ndash;&gt;|是| C[保持在feature/wxz分支修改]     B &ndash;&gt;|否| D[返回feature/3.10.7.C123处理其他任务]     C &ndash;&gt; E[定期rebase原分支]     D &ndash;&gt; F[通过MR将wxz变更合并到主开发线]</p>
+<p>若需继续开发wxz相关功能：</p>
+<p>git checkout feature/wxz  # 返回特性分支 git add . &amp;&amp; git commit -m &ldquo;feat: 完善XX功能&rdquo;  # 持续提交</p>
+<p>若需处理3.10.7.C123其他任务：</p>
+<p>git checkout feature/3.10.7.C123 git pull origin feature/3.10.7.C123  # 同步最新代码</p>
+<p>跨分支同步策略</p>
+<p>从主开发分支获取更新（每周至少执行一次） git checkout feature/wxz git rebase feature/3.10.7.C123  # 解决可能出现的冲突 git push -f origin feature/wxz  # 需要强制推送</p>
+<p>**代码提交流程</p>
+<p>sequenceDiagram     开发者-&raquo;+feature/wxz: 本地提交     feature/wxz-&raquo;+GitLab: 推送变更     GitLab-&raquo;+MR系统: 创建合并请求     评审者-&raquo;MR系统: 代码审核     MR系统-&raquo;feature/3.10.7.C123: 合并通过后自动同步</p>
+<p>（AI生成）</p>
+<h2 id="统计代码行的脚本保存为ps1后缀文件">
+<a class="header-anchor" href="#%e7%bb%9f%e8%ae%a1%e4%bb%a3%e7%a0%81%e8%a1%8c%e7%9a%84%e8%84%9a%e6%9c%ac%e4%bf%9d%e5%ad%98%e4%b8%baps1%e5%90%8e%e7%bc%80%e6%96%87%e4%bb%b6"></a>
+统计代码行的脚本保存为.ps1后缀文件
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$add</span> <span class="p">=</span> <span class="nv">$subs</span> <span class="p">=</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">log</span> <span class="p">-</span><span class="n">-since</span><span class="p">=</span><span class="s2">&#34;30 days ago&#34;</span> <span class="p">-</span><span class="n">-pretty</span><span class="p">=</span><span class="n">tformat</span><span class="err">:</span> <span class="p">-</span><span class="n">-numstat</span> <span class="p">-</span><span class="n">-author</span><span class="p">=</span><span class="s2">&#34;</span><span class="p">$(</span><span class="n">git</span> <span class="n">config</span> <span class="n">user</span><span class="p">.</span><span class="n">email</span><span class="p">)</span><span class="s2">&#34;</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="nb">ForEach-Object</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$arr</span> <span class="p">=</span> <span class="nv">$_</span> <span class="n">-split</span> <span class="s2">&#34;\t&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$arr</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span> <span class="o">-match</span> <span class="s2">&#34;^\d+$&#34;</span> <span class="o">-and</span> <span class="nv">$arr</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span> <span class="o">-match</span> <span class="s2">&#34;^\d+$&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$add</span> <span class="p">+=</span> <span class="p">[</span><span class="no">int</span><span class="p">]</span><span class="nv">$arr</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$subs</span> <span class="p">+=</span> <span class="p">[</span><span class="no">int</span><span class="p">]</span><span class="nv">$arr</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="no">PSCustomObject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;新增行数&#39;</span> <span class="p">=</span> <span class="nv">$add</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;删除行数&#39;</span> <span class="p">=</span> <span class="nv">$subs</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;净增行数&#39;</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$add</span> <span class="p">-</span> <span class="nv">$subs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="p">|</span> <span class="nb">Format-List</span>
+</span></span></code></pre></div><p>git init</p>
 <p>git remote add origin <a href="https://gitee.com/your_gitee_username/your_repo_name.git">https://gitee.com/your_gitee_username/your_repo_name.git</a></p>
 <p>git add .
 git commit -m &ldquo;Initial commit&rdquo;  # 提交信息可以根据您的需要修改</p>
@@ -292,7 +352,7 @@ git pull origin master &ndash;allow-unrelated-histories
     id="article-nav"
     data-aos="fade-up"
   ><div class="article-nav-link-wrap article-nav-link-left"><img
-              data-src="https://d-sketon.top/img/_backwebp/bg4.webp"
+              data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
               data-sizes="auto"
               alt="Linux运维常用命令速查"
               class="lazyload"
@@ -327,10 +387,10 @@ git pull origin master &ndash;allow-unrelated-histories
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;3.6k</span
+          >&nbsp;4.8k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;00:11</span>
+        <span class="icon-coffee">&nbsp;00:13</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -355,7 +415,12 @@ git pull origin master &ndash;allow-unrelated-histories
   <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><div class="sidebar-toc">
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#第一次提交">第一次提交</a></li>
+    <li><a href="#统计代码行的脚本保存为ps1后缀文件">统计代码行的脚本保存为.ps1后缀文件</a></li>
+  </ul>
+</nav>
   </div>
 </div></div>
         <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -370,17 +435,17 @@ git pull origin master &ndash;allow-unrelated-histories
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">7</div>
+    <div>文章</div><div class="sidebar-state-number">8</div>
   </div>
   <a class="sidebar-state-category" href="/lanke-hugo.github.io/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
     <div class="sidebar-state-number">
-      9
+      10
     </div>
   </a>
   <a class="sidebar-state-tag" href="/lanke-hugo.github.io/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">15</div>
+    <div class="sidebar-state-number">16</div>
   </a>
 </div>
 <div class="sidebar-social"></div>

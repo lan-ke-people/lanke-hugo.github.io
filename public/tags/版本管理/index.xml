@@ -12,12 +12,43 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Sep 2025 00:00:00 +0000</lastBuildDate>
     
     
     <atom:link href="https://lan-ke-people.github.io/lanke-hugo.github.io/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>git 常用命令</title>
+      <link>https://lan-ke-people.github.io/lanke-hugo.github.io/post/git%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Wed, 16 Aug 2023 00:00:00 &#43;0000</pubDate>
+      <author>2361303523@qq.com (烂柯)</author>
+      <guid>https://lan-ke-people.github.io/lanke-hugo.github.io/post/git%E5%91%BD%E4%BB%A4/</guid>
+      <description>
+        <![CDATA[<h1>git 常用命令</h1><p>作者：烂柯（2361303523@qq.com）</p>
+        
+          <p>git stash            暂存当前修改</p>
+<p>git stash               # 暂存本地修改
+git pull &ndash;rebase origin develop  # 变基式拉取最新代码
+git stash pop           # 恢复本地修改</p>
+<p>git fetch &ndash;all	#刷新获取远程分支</p>
+<p>git branch -vv	#当前追踪的远程分支</p>
+<h2 id="第一次提交">
+<a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ac%a1%e6%8f%90%e4%ba%a4"></a>
+第一次提交
+</h2><p>提交本地修改
+git add .
+git commit -m &ldquo;feat: add wxz feature&rdquo;</p>
+        
+        <hr><p>本文2023-08-16首发于<a href='https://lan-ke-people.github.io/lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2025-09-29</p>]]>
+      </description>
+      
+        <category>环境配置</category>
+      
+    </item>
     
     
 
@@ -131,37 +162,6 @@ nvm 常用命令
       </description>
       
         <category>前端开发</category><category>环境配置</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>git 常用命令</title>
-      <link>https://lan-ke-people.github.io/lanke-hugo.github.io/post/git%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Wed, 16 Aug 2023 00:00:00 &#43;0000</pubDate>
-      <author>2361303523@qq.com (烂柯)</author>
-      <guid>https://lan-ke-people.github.io/lanke-hugo.github.io/post/git%E5%91%BD%E4%BB%A4/</guid>
-      <description>
-        <![CDATA[<h1>git 常用命令</h1><p>作者：烂柯（2361303523@qq.com）</p>
-        
-          <p>git init</p>
-<p>git remote add origin <a href="https://gitee.com/your_gitee_username/your_repo_name.git">https://gitee.com/your_gitee_username/your_repo_name.git</a></p>
-<p>git add .
-git commit -m &ldquo;Initial commit&rdquo;  # 提交信息可以根据您的需要修改</p>
-<p>git push -u origin master</p>
-<p>git pull origin master</p>
-<p>git add .
-git commit -m &ldquo;Merge remote changes&rdquo;</p>
-<p>git push origin master
-查看改变的文件列表
-git status</p>
-<p>这个错误提示表明您尝试将两个没有共同祖先的分支进行合并，因此Git拒绝了此次合并。出现这种情况的原因可能是因为您的本地仓库和远程仓库在历史上没有共同的提交点。这通常在以下情况下发生：</p>
-        
-        <hr><p>本文2023-08-16首发于<a href='https://lan-ke-people.github.io/lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2023-08-16</p>]]>
-      </description>
-      
-        <category>环境配置</category>
       
     </item>
     
