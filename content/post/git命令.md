@@ -79,7 +79,7 @@ sequenceDiagram     开发者->>+feature/wxz: 本地提交     feature/wxz->>+Gi
 
 （AI生成）
 
-## 统计代码行的脚本保存为.ps1后缀文件
+## 统计近三十天代码行的脚本，保存为.ps1后缀文件
 ```powershell
 $add = $subs = 0
 git log --since="30 days ago" --pretty=tformat: --numstat --author="$(git config user.email)" |
@@ -97,6 +97,45 @@ ForEach-Object {
     '净增行数' = ($add - $subs)
 } | Format-List
 
+```
+
+## 统计代码行的脚本，保存为.ps1后缀文件
+默认统计近七天 指定Days参数统计对应天数
+示例： C:\script\CodestatisticsXday.ps1 -Days 7
+```powershell
+param(
+    [int]$Days = 7
+)
+
+# 获取当前git用户邮箱
+$userEmail = git config user.email
+
+if (-not $userEmail) {
+    Write-Error "无法获取git用户邮箱，请先配置git config user.email"
+    exit 1
+}
+
+$add = $subs = 0
+
+# 构建git命令
+$sinceParam = "$Days days ago"
+git log --since="$sinceParam" --pretty=tformat: --numstat --author="$userEmail" |
+ForEach-Object {
+    $arr = $_ -split "\t"
+    if ($arr[0] -match "^\d+$" -and $arr[1] -match "^\d+$") {
+        $add += [int]$arr[0]
+        $subs += [int]$arr[1]
+    }
+}
+
+# 输出结果
+[PSCustomObject]@{
+    '统计天数' = $Days
+    '用户邮箱' = $userEmail
+    '新增行数' = $add
+    '删除行数' = $subs
+    '净增行数' = ($add - $subs)
+} | Format-List
 ```
 
 
