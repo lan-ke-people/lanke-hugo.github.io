@@ -146,7 +146,8 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#第一次提交">第一次提交</a></li>
-    <li><a href="#统计代码行的脚本保存为ps1后缀文件">统计代码行的脚本保存为.ps1后缀文件</a></li>
+    <li><a href="#统计近三十天代码行的脚本保存为ps1后缀文件">统计近三十天代码行的脚本，保存为.ps1后缀文件</a></li>
+    <li><a href="#统计代码行的脚本保存为ps1后缀文件">统计代码行的脚本，保存为.ps1后缀文件</a></li>
   </ul>
 </nav>
   </div>
@@ -163,17 +164,17 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">8</div>
+    <div>文章</div><div class="sidebar-state-number">10</div>
   </div>
   <a class="sidebar-state-category" href="/lanke-hugo.github.io/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
     <div class="sidebar-state-number">
-      10
+      11
     </div>
   </a>
   <a class="sidebar-state-tag" href="/lanke-hugo.github.io/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">16</div>
+    <div class="sidebar-state-number">17</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -247,7 +248,17 @@
       >环境配置</a
     ></div>
 </div>
-    <div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><p>git stash            暂存当前修改</p>
+    <div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><ul>
+<li>‌<strong>feat</strong>‌：表示新增功能（feature）</li>
+<li>‌<strong>fix</strong>‌：表示修复bug</li>
+<li>‌<strong>docs</strong>‌：表示文档更新</li>
+<li>‌<strong>style</strong>‌：表示代码格式调整（不影响代码逻辑）</li>
+<li>‌<strong>refactor</strong>‌：表示代码重构</li>
+<li>‌<strong>test</strong>‌：表示测试相关更改</li>
+<li>‌<strong>chore</strong>‌：表示构建过程或辅助工具的变动</li>
+</ul>
+<p>git init               # 初始化仓库
+git stash            暂存当前修改</p>
 <p>git stash               # 暂存本地修改
 git pull &ndash;rebase origin develop  # 变基式拉取最新代码
 git stash pop           # 恢复本地修改</p>
@@ -284,9 +295,9 @@ git push origin feature/3.10.7.C123 # 推送合并结果</p>
 <p>**代码提交流程</p>
 <p>sequenceDiagram     开发者-&raquo;+feature/wxz: 本地提交     feature/wxz-&raquo;+GitLab: 推送变更     GitLab-&raquo;+MR系统: 创建合并请求     评审者-&raquo;MR系统: 代码审核     MR系统-&raquo;feature/3.10.7.C123: 合并通过后自动同步</p>
 <p>（AI生成）</p>
-<h2 id="统计代码行的脚本保存为ps1后缀文件">
-<a class="header-anchor" href="#%e7%bb%9f%e8%ae%a1%e4%bb%a3%e7%a0%81%e8%a1%8c%e7%9a%84%e8%84%9a%e6%9c%ac%e4%bf%9d%e5%ad%98%e4%b8%baps1%e5%90%8e%e7%bc%80%e6%96%87%e4%bb%b6"></a>
-统计代码行的脚本保存为.ps1后缀文件
+<h2 id="统计近三十天代码行的脚本保存为ps1后缀文件">
+<a class="header-anchor" href="#%e7%bb%9f%e8%ae%a1%e8%bf%91%e4%b8%89%e5%8d%81%e5%a4%a9%e4%bb%a3%e7%a0%81%e8%a1%8c%e7%9a%84%e8%84%9a%e6%9c%ac%e4%bf%9d%e5%ad%98%e4%b8%baps1%e5%90%8e%e7%bc%80%e6%96%87%e4%bb%b6"></a>
+统计近三十天代码行的脚本，保存为.ps1后缀文件
 </h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$add</span> <span class="p">=</span> <span class="nv">$subs</span> <span class="p">=</span> <span class="mf">0</span>
 </span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">log</span> <span class="p">-</span><span class="n">-since</span><span class="p">=</span><span class="s2">&#34;30 days ago&#34;</span> <span class="p">-</span><span class="n">-pretty</span><span class="p">=</span><span class="n">tformat</span><span class="err">:</span> <span class="p">-</span><span class="n">-numstat</span> <span class="p">-</span><span class="n">-author</span><span class="p">=</span><span class="s2">&#34;</span><span class="p">$(</span><span class="n">git</span> <span class="n">config</span> <span class="n">user</span><span class="p">.</span><span class="n">email</span><span class="p">)</span><span class="s2">&#34;</span> <span class="p">|</span>
 </span></span><span class="line"><span class="cl"><span class="nb">ForEach-Object</span> <span class="p">{</span>
@@ -298,6 +309,44 @@ git push origin feature/3.10.7.C123 # 推送合并结果</p>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="no">PSCustomObject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;新增行数&#39;</span> <span class="p">=</span> <span class="nv">$add</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;删除行数&#39;</span> <span class="p">=</span> <span class="nv">$subs</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;净增行数&#39;</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$add</span> <span class="p">-</span> <span class="nv">$subs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="p">|</span> <span class="nb">Format-List</span>
+</span></span></code></pre></div><h2 id="统计代码行的脚本保存为ps1后缀文件">
+<a class="header-anchor" href="#%e7%bb%9f%e8%ae%a1%e4%bb%a3%e7%a0%81%e8%a1%8c%e7%9a%84%e8%84%9a%e6%9c%ac%e4%bf%9d%e5%ad%98%e4%b8%baps1%e5%90%8e%e7%bc%80%e6%96%87%e4%bb%b6"></a>
+统计代码行的脚本，保存为.ps1后缀文件
+</h2><p>默认统计近七天 指定Days参数统计对应天数
+示例： C:\script\CodestatisticsXday.ps1 -Days 7</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="k">param</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="no">int</span><span class="p">]</span><span class="nv">$Days</span> <span class="p">=</span> <span class="mf">7</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 获取当前git用户邮箱</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$userEmail</span> <span class="p">=</span> <span class="n">git</span> <span class="n">config</span> <span class="n">user</span><span class="p">.</span><span class="py">email</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="nv">$userEmail</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Write-Error</span> <span class="s2">&#34;无法获取git用户邮箱，请先配置git config user.email&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">exit</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$add</span> <span class="p">=</span> <span class="nv">$subs</span> <span class="p">=</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 构建git命令</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$sinceParam</span> <span class="p">=</span> <span class="s2">&#34;</span><span class="nv">$Days</span><span class="s2"> days ago&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">log</span> <span class="p">-</span><span class="n">-since</span><span class="p">=</span><span class="s2">&#34;</span><span class="nv">$sinceParam</span><span class="s2">&#34;</span> <span class="p">-</span><span class="n">-pretty</span><span class="p">=</span><span class="n">tformat</span><span class="err">:</span> <span class="p">-</span><span class="n">-numstat</span> <span class="p">-</span><span class="n">-author</span><span class="p">=</span><span class="s2">&#34;</span><span class="nv">$userEmail</span><span class="s2">&#34;</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="nb">ForEach-Object</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$arr</span> <span class="p">=</span> <span class="nv">$_</span> <span class="n">-split</span> <span class="s2">&#34;\t&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$arr</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span> <span class="o">-match</span> <span class="s2">&#34;^\d+$&#34;</span> <span class="o">-and</span> <span class="nv">$arr</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span> <span class="o">-match</span> <span class="s2">&#34;^\d+$&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$add</span> <span class="p">+=</span> <span class="p">[</span><span class="no">int</span><span class="p">]</span><span class="nv">$arr</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$subs</span> <span class="p">+=</span> <span class="p">[</span><span class="no">int</span><span class="p">]</span><span class="nv">$arr</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 输出结果</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="no">PSCustomObject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;统计天数&#39;</span> <span class="p">=</span> <span class="nv">$Days</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;用户邮箱&#39;</span> <span class="p">=</span> <span class="nv">$userEmail</span>
 </span></span><span class="line"><span class="cl">    <span class="s1">&#39;新增行数&#39;</span> <span class="p">=</span> <span class="nv">$add</span>
 </span></span><span class="line"><span class="cl">    <span class="s1">&#39;删除行数&#39;</span> <span class="p">=</span> <span class="nv">$subs</span>
 </span></span><span class="line"><span class="cl">    <span class="s1">&#39;净增行数&#39;</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$add</span> <span class="p">-</span> <span class="nv">$subs</span><span class="p">)</span>
@@ -352,7 +401,7 @@ git pull origin master &ndash;allow-unrelated-histories
     id="article-nav"
     data-aos="fade-up"
   ><div class="article-nav-link-wrap article-nav-link-left"><img
-              data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
+              data-src="https://d-sketon.top/img/_backwebp/bg4.webp"
               data-sizes="auto"
               alt="Linux运维常用命令速查"
               class="lazyload"
@@ -387,10 +436,10 @@ git pull origin master &ndash;allow-unrelated-histories
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;4.8k</span
+          >&nbsp;10.6k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;00:13</span>
+        <span class="icon-coffee">&nbsp;00:26</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -418,7 +467,8 @@ git pull origin master &ndash;allow-unrelated-histories
     <nav id="TableOfContents">
   <ul>
     <li><a href="#第一次提交">第一次提交</a></li>
-    <li><a href="#统计代码行的脚本保存为ps1后缀文件">统计代码行的脚本保存为.ps1后缀文件</a></li>
+    <li><a href="#统计近三十天代码行的脚本保存为ps1后缀文件">统计近三十天代码行的脚本，保存为.ps1后缀文件</a></li>
+    <li><a href="#统计代码行的脚本保存为ps1后缀文件">统计代码行的脚本，保存为.ps1后缀文件</a></li>
   </ul>
 </nav>
   </div>
@@ -435,17 +485,17 @@ git pull origin master &ndash;allow-unrelated-histories
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">8</div>
+    <div>文章</div><div class="sidebar-state-number">10</div>
   </div>
   <a class="sidebar-state-category" href="/lanke-hugo.github.io/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
     <div class="sidebar-state-number">
-      10
+      11
     </div>
   </a>
   <a class="sidebar-state-tag" href="/lanke-hugo.github.io/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">16</div>
+    <div class="sidebar-state-number">17</div>
   </a>
 </div>
 <div class="sidebar-social"></div>

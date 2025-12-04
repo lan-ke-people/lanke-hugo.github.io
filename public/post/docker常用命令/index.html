@@ -143,7 +143,18 @@
     ><div class="sidebar-toc-sidebar"><div class="sidebar-toc">
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#docker常用命令">Docker常用命令</a></li>
+        <li><a href="#mysql启动">MySQL启动</a></li>
+        <li><a href="#name指定容器名字--v目录挂载--p指定端口映射---e设置mysql参数--d后台运行">&ndash;name指定容器名字 -v目录挂载 -p指定端口映射  -e设置mysql参数 -d后台运行</a></li>
+        <li><a href="#启动redis容器">启动redis容器</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
 </div></div>
           <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -158,17 +169,17 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">8</div>
+    <div>文章</div><div class="sidebar-state-number">10</div>
   </div>
   <a class="sidebar-state-category" href="/lanke-hugo.github.io/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
     <div class="sidebar-state-number">
-      10
+      11
     </div>
   </a>
   <a class="sidebar-state-tag" href="/lanke-hugo.github.io/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">16</div>
+    <div class="sidebar-state-number">17</div>
   </a>
 </div>
 <div class="sidebar-social"></div>
@@ -247,50 +258,73 @@
       >容器化部署</a
     ></div>
 </div>
-    <div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><p>1
-检查docker版本
-docker -v
-2
-查看docker已有镜像
-sudo docker images
-3
-设置docker开机启动
-sudo systemctl enable docker</p>
-<p>查看docker服务状态是否启动
-sudo systemctl status docker</p>
-<p>启动docker服务
-sudo systemctl start docker</p>
-<p>查看所有容器状态
-docker ps -a</p>
-<p>查看正在运行的容器状态
-docker ps</p>
-<p>可以通过以下命令在容器内重新加载 Nginx 配置：
-docker exec &lt;nginx_container_id_or_name&gt; nginx -s reload</p>
-<p>使用 docker exec 命令进入容器的交互式 shell：
-docker exec -it nginx /bin/bash</p>
-<p>重启指定容器：
-sudo docker restart &lt;container_name_or_id&gt;</p>
-<p>更新容器为开机启动启动
-docker update 容器id &ndash;restart=always
-关闭容器为开机启动
-docker update 容器id &ndash;restart=no</p>
-<p>1 拉去mysql镜像
-sudo docker pull mysql:8.0</p>
-<p>2 启动mysql容器</p>
-<h1 id="name指定容器名字--v目录挂载--p指定端口映射---e设置mysql参数--d后台运行">
+    <div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h3 id="docker常用命令">
+<a class="header-anchor" href="#docker%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4"></a>
+Docker常用命令
+</h3><ul>
+<li>检查docker版本</li>
+<li>docker -v</li>
+<li></li>
+<li>查看docker已有镜像</li>
+<li>sudo docker images</li>
+<li></li>
+<li>设置docker开机启动</li>
+<li>sudo systemctl enable docker</li>
+<li></li>
+<li>查看docker服务状态是否启动</li>
+<li>sudo systemctl status docker</li>
+<li></li>
+<li>启动docker服务</li>
+<li>sudo systemctl start docker</li>
+<li></li>
+<li>查看所有容器状态</li>
+<li>docker ps -a</li>
+<li></li>
+<li>查看正在运行的容器状态</li>
+<li>docker ps</li>
+<li></li>
+<li>可以通过以下命令在容器内重新加载 Nginx 配置：</li>
+<li>docker exec &lt;nginx_container_id_or_name&gt; nginx -s reload</li>
+<li></li>
+<li>使用 docker exec 命令进入容器的交互式 shell：</li>
+<li>docker exec -it nginx /bin/bash</li>
+<li></li>
+<li>重启指定容器：</li>
+<li>sudo docker restart &lt;container_name_or_id&gt;</li>
+<li></li>
+<li>更新容器为开机启动启动</li>
+<li>docker update 容器id &ndash;restart=always</li>
+<li>关闭容器为开机启动</li>
+<li>docker update 容器id &ndash;restart=no</li>
+</ul>
+<h3 id="mysql启动">
+<a class="header-anchor" href="#mysql%e5%90%af%e5%8a%a8"></a>
+MySQL启动
+</h3><ul>
+<li>1 拉去mysql镜像</li>
+<li>sudo docker pull mysql:8.0</li>
+<li></li>
+<li>2 启动mysql容器</li>
+<li>
+<h3 id="name指定容器名字--v目录挂载--p指定端口映射---e设置mysql参数--d后台运行">
 <a class="header-anchor" href="#name%e6%8c%87%e5%ae%9a%e5%ae%b9%e5%99%a8%e5%90%8d%e5%ad%97--v%e7%9b%ae%e5%bd%95%e6%8c%82%e8%bd%bd--p%e6%8c%87%e5%ae%9a%e7%ab%af%e5%8f%a3%e6%98%a0%e5%b0%84---e%e8%ae%be%e7%bd%aemysql%e5%8f%82%e6%95%b0--d%e5%90%8e%e5%8f%b0%e8%bf%90%e8%a1%8c"></a>
 &ndash;name指定容器名字 -v目录挂载 -p指定端口映射  -e设置mysql参数 -d后台运行
-</h1><p>sudo docker run &ndash;name mysql -v /mydata/mysql/data:/var/lib/mysql -v /mydata/mysql:/etc/mysql/conf.d -v /mydata/mysql/log:/var/log/mysql  -e MYSQL_ROOT_PASSWORD=root  -p 3306:3306 -d mysql:latest</p>
-<p>3 使用su - root（切换为root，这样就不用每次都sudo来赐予了）
-su - root
-4 进入mysql容器
-docker exec -it 容器名称|容器id bin/bash
-修改完之后再刷新配置flush privileges；
-查看所有容器状态
-docker ps -a
-docker rm 容器id</p>
-<p>启动redis容器
-docker run -p 6379:6379 &ndash;name redis &ndash;privileged=true -v /mydata/redis/data:/data -v /mydata/redis/conf/redis.conf:/etc/redis/redis.conf -d redis redis-server /etc/redis/redis.conf</p>
+</h3></li>
+<li>sudo docker run &ndash;name mysql -v /mydata/mysql/data:/var/lib/mysql -v /mydata/mysql:/etc/mysql/conf.d -v /mydata/mysql/log:/var/log/mysql  -e MYSQL_ROOT_PASSWORD=root  -p 3306:3306 -d mysql:latest</li>
+<li></li>
+<li>3 使用su - root（切换为root，这样就不用每次都sudo来赐予了）</li>
+<li>su - root</li>
+<li>4 进入mysql容器</li>
+<li>docker exec -it 容器名称|容器id bin/bash</li>
+<li>修改完之后再刷新配置flush privileges；</li>
+<li>查看所有容器状态</li>
+<li>docker ps -a</li>
+<li>docker rm 容器id</li>
+</ul>
+<h3 id="启动redis容器">
+<a class="header-anchor" href="#%e5%90%af%e5%8a%a8redis%e5%ae%b9%e5%99%a8"></a>
+启动redis容器
+</h3><p>docker run -p 6379:6379 &ndash;name redis &ndash;privileged=true -v /mydata/redis/data:/data -v /mydata/redis/conf/redis.conf:/etc/redis/redis.conf -d redis redis-server /etc/redis/redis.conf</p>
 </div>
     <footer class="article-footer"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
       <a
@@ -319,7 +353,7 @@ docker run -p 6379:6379 &ndash;name redis &ndash;privileged=true -v /mydata/redi
     id="article-nav"
     data-aos="fade-up"
   ><div class="article-nav-link-wrap article-nav-link-left"><img
-              data-src="https://d-sketon.top/img/_backwebp/bg4.webp"
+              data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
               data-sizes="auto"
               alt="git 常用命令"
               class="lazyload"
@@ -327,7 +361,7 @@ docker run -p 6379:6379 &ndash;name redis &ndash;privileged=true -v /mydata/redi
         <div class="article-nav-caption">前一篇</div>
         <h3 class="article-nav-title">git 常用命令</h3>
       </div><div class="article-nav-link-wrap article-nav-link-right"><img
-              data-src="https://d-sketon.top/img/_backwebp/bg4.webp"
+              data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
               data-sizes="auto"
               alt="Oracle维护命令"
               class="lazyload"
@@ -354,10 +388,10 @@ docker run -p 6379:6379 &ndash;name redis &ndash;privileged=true -v /mydata/redi
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;4.8k</span
+          >&nbsp;10.6k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;00:13</span>
+        <span class="icon-coffee">&nbsp;00:26</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -382,7 +416,18 @@ docker run -p 6379:6379 &ndash;name redis &ndash;privileged=true -v /mydata/redi
   <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><div class="sidebar-toc">
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#docker常用命令">Docker常用命令</a></li>
+        <li><a href="#mysql启动">MySQL启动</a></li>
+        <li><a href="#name指定容器名字--v目录挂载--p指定端口映射---e设置mysql参数--d后台运行">&ndash;name指定容器名字 -v目录挂载 -p指定端口映射  -e设置mysql参数 -d后台运行</a></li>
+        <li><a href="#启动redis容器">启动redis容器</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
 </div></div>
         <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -397,17 +442,17 @@ docker run -p 6379:6379 &ndash;name redis &ndash;privileged=true -v /mydata/redi
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">8</div>
+    <div>文章</div><div class="sidebar-state-number">10</div>
   </div>
   <a class="sidebar-state-category" href="/lanke-hugo.github.io/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
     <div class="sidebar-state-number">
-      10
+      11
     </div>
   </a>
   <a class="sidebar-state-tag" href="/lanke-hugo.github.io/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">16</div>
+    <div class="sidebar-state-number">17</div>
   </a>
 </div>
 <div class="sidebar-social"></div>

@@ -1,0 +1,18 @@
+domain: 'dayu'                #domain
+name: 'zeus'
+state: 'plus'               #init位新注入一个domain,plus为在原有基础上增加资源
+addr: '3.44.46.214:26781'
+
+add:
+  categories:
+    - category: 'auth-linkage'
+      display: '第三方联动'
+      cdesc: '第三方联动'
+      actions:
+        - action: 'view'
+          adesc: '查看'              
+        - action: 'edit'
+          adesc: '编辑'
+          depends:
+            - action: 'view'
+              adesc: '查看'      
