@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Work Book on 烂柯的 Blog</title><link>https://lan-ke-people.github.io/lanke-hugo.github.io/categories/work-book/</link><description>Recent content from 烂柯的 Blog</description><generator>Hugo</generator><language>zh-cn</language><managingEditor>2361303523@qq.com (烂柯)</managingEditor><webMaster>2361303523@qq.com (烂柯)</webMaster><copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright><lastBuildDate>Thu, 04 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://lan-ke-people.github.io/lanke-hugo.github.io/categories/work-book/index.xml" rel="self" type="application/rss+xml"/><item><title>QAX个人工作笔记</title><link>https://lan-ke-people.github.io/lanke-hugo.github.io/post/a-qax%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 10 Sep 2025 00:00:00 +0000</pubDate><author>2361303523@qq.com (烂柯)</author><guid>https://lan-ke-people.github.io/lanke-hugo.github.io/post/a-qax%E7%AC%94%E8%AE%B0/</guid><description>
+<![CDATA[<h1>QAX个人工作笔记</h1><p>作者：烂柯（2361303523@qq.com）</p>
+        
+          <h3 id="增加功能权限">
+<a class="header-anchor" href="#%e5%a2%9e%e5%8a%a0%e5%8a%9f%e8%83%bd%e6%9d%83%e9%99%90"></a>
+增加功能权限
+</h3><p>kubectl get svc | grep zeus	获取所需IP及端口号</p>
+<p><a href="sources/add_auth-linkage.yaml">示例文件</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;dayu&#39;</span><span class="w">                </span><span class="c">#domain</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;zeus&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;plus&#39;</span><span class="w">               </span><span class="c">#init位新注入一个domain,plus为在原有基础上增加资源</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">addr</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.44.46.214:26781&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">add</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">categories</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;auth-linkage&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">display</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;第三方联动&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">cdesc</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;第三方联动&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">actions</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      	</span>- <span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;manage&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">adesc</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;管理&#39;</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">adesc</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;查看&#39;</span><span class="w">              
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;edit&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">adesc</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;编辑&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">depends</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;view&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">adesc</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;查看&#39;</span><span class="w">      
+</span></span></span></code></pre></div><h6 id="增加功能权限示例">
+<a class="header-anchor" href="#%e5%a2%9e%e5%8a%a0%e5%8a%9f%e8%83%bd%e6%9d%83%e9%99%90%e7%a4%ba%e4%be%8b"></a>
+增加功能权限示例
+</h6><p><img src="sources/%E5%A2%9E%E5%8A%A0%E5%8A%9F%E8%83%BD%E6%9D%83%E9%99%90.png" alt=""></p>
+        
+        <hr><p>本文2025-09-10首发于<a href='https://lan-ke-people.github.io/lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2025-12-04</p>]]></description><category>work book</category></item><item><title>QAX笔记</title><link>https://lan-ke-people.github.io/lanke-hugo.github.io/post/b-qax%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 10 Sep 2025 00:00:00 +0000</pubDate><author>2361303523@qq.com (烂柯)</author><guid>https://lan-ke-people.github.io/lanke-hugo.github.io/post/b-qax%E7%AC%94%E8%AE%B0/</guid><description>
+<![CDATA[<h1>QAX笔记</h1><p>作者：烂柯（2361303523@qq.com）</p>
+        
+          <h1 id="笔记">
+<a class="header-anchor" href="#%e7%ac%94%e8%ae%b0"></a>
+笔记
+</h1><p>常看笔记
+<a href="https://www.bookstack.cn/books/effective-java-3rd-chinese">https://www.bookstack.cn/books/effective-java-3rd-chinese</a></p>
+<h2 id="一后台服务">
+<a class="header-anchor" href="#%e4%b8%80%e5%90%8e%e5%8f%b0%e6%9c%8d%e5%8a%a1"></a>
+一、后台服务
+</h2><h4 id="1打包部署">
+<a class="header-anchor" href="#1%e6%89%93%e5%8c%85%e9%83%a8%e7%bd%b2"></a>
+1.打包部署
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">在gitlub中的Tags中new一个tag，命名     v1.0-alpha.16  -------&gt;  v1.0-alpha.17
+</span></span><span class="line"><span class="cl">1、cd /data/s/services/dayu_config/dayu-confs/configs/
+</span></span><span class="line"><span class="cl">2、vim mods/服务名/artifact/alpha.ini
+</span></span><span class="line"><span class="cl">3、cd /data/s/services/dayu_config/dayu-confs/configs/ &amp;&amp; rg -e single _secret-ukey
+</span></span><span class="line"><span class="cl">4、kubectl get pod  -n dev | grep secret-ukey
+</span></span><span class="line"><span class="cl">kubectl get pod | grep secret-ukey
+</span></span><span class="line"><span class="cl">5、查看日志：kubectl logs -f --tail=100 data-transmission-66b8bf7558-dxnsn -n dev
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">重启服务：（直接删pod）
+</span></span><span class="line"><span class="cl">kubectl delete pod 服务名
+</span></span></code></pre></div><h4 id="2打一键升级包">
+<a class="header-anchor" href="#2%e6%89%93%e4%b8%80%e9%94%ae%e5%8d%87%e7%ba%a7%e5%8c%85"></a>
+2.打一键升级包
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">参考文档：
+</span></span><span class="line"><span class="cl">https://cooperate-sop-doc-situation-situation-sop-8fb60afe02c747db4e8e5.doc-biz.qianxin-inc.cn/develop/overall/dev/upgrade-template.html
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">账号密码：
+</span></span><span class="line"><span class="cl">situation-af
+</span></span><span class="line"><span class="cl">hcK%R*UJXeYesYsw2023
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">(1)添加物料
+</span></span><span class="line"><span class="cl">1.在images.txt中加入镜像
+</span></span><span class="line"><span class="cl">2.设置compressTarGz.sh中PROJECT_NAME(命名规则为 态势大版本号加上项目简称，例如：R3.10.6_LNWX)
+</span></span><span class="line"><span class="cl">3./pre_other：发布服务之前需要执行的内容，通过脚本执行。
+</span></span><span class="line"><span class="cl">    /init_db：存放需要额外执行的sql，sql文件名字与数据库名保持一致
+</span></span><span class="line"><span class="cl">    /dict：需要导入到玄机字典文件，xls文件
+</span></span><span class="line"><span class="cl">    /asset_field：资产扩展字段文件，json文件
+</span></span><span class="line"><span class="cl">  /mods：本次需要升级的mods文件
+</span></span><span class="line"><span class="cl">  /post_other：发布服务之后需要执行的内容，通过脚本执行
+</span></span><span class="line"><span class="cl">  /zeus_file：zeus权限文件
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">(2)将文件拉到后台服务中
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">(3)赋予执行权限
+</span></span><span class="line"><span class="cl">chmod +x compressTarGz.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">(4)执行脚本
+</span></span><span class="line"><span class="cl">./compressTarGz.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">(5)现场执行
+</span></span><span class="line"><span class="cl">1.tar -zxvf R3.10.6_BJGD_update_20250822132538.tar.gz
+</span></span><span class="line"><span class="cl">2.cd R3.10.6_BJGD_update_20250822132538/
+</span></span><span class="line"><span class="cl">3.bash upgrade.sh
+</span></span><span class="line"><span class="cl">4.查看服务是否起来
+</span></span></code></pre></div><h4 id="3命令">
+<a class="header-anchor" href="#3%e5%91%bd%e4%bb%a4"></a>
+3.命令
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">ll</span><span class="o">/</span><span class="n">ls</span>
+</span></span><span class="line"><span class="cl"><span class="n">cat</span> <span class="n">beta</span><span class="o">.</span><span class="n">ini</span>
+</span></span><span class="line"><span class="cl"><span class="n">cat</span> <span class="n">alpha</span><span class="o">.</span><span class="n">ini</span> <span class="o">&gt;</span> <span class="n">beta</span><span class="o">.</span><span class="n">ini</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">docker</span> <span class="n">pull</span> <span class="n">situation</span><span class="o">-</span><span class="n">docker</span><span class="o">-</span><span class="n">alpha</span><span class="o">.</span><span class="n">af</span><span class="o">-</span><span class="n">biz</span><span class="o">.</span><span class="n">qianxin</span><span class="o">-</span><span class="n">inc</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">secret</span><span class="o">-</span><span class="n">ukey</span><span class="p">:</span><span class="mf">6134.0</span><span class="o">.</span><span class="mf">18.</span><span class="n">fjwx</span><span class="o">-</span><span class="n">alpha</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">1.</span><span class="err">查看用</span><span class="n">x86还是arm</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="n">uname</span> <span class="o">-</span><span class="n">m</span>
+</span></span><span class="line"><span class="cl"><span class="err">查看服务</span><span class="n">ip</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="n">hostname</span> <span class="o">-</span><span class="n">i</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">2.</span><span class="err">查看</span><span class="n">cm</span><span class="err">：（</span><span class="n">config</span><span class="o">-</span><span class="n">map</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">describe</span> <span class="n">cm</span> <span class="n">gateway</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">3.</span><span class="err">查看服务：</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">get</span> <span class="n">pod</span> <span class="err">（默认进去命名空间的</span><span class="n">default</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">get</span> <span class="n">cn</span><span class="err">（查看命名空间，包含</span><span class="n">default</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">get</span> <span class="n">pod</span> <span class="o">-</span><span class="n">n</span> <span class="n">uae</span><span class="o">-</span><span class="n">flink</span><span class="o">-</span><span class="n">single</span><span class="err">（进去其他命名空间）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">4.</span><span class="err">查看服务版本号：（镜像服务名：</span><span class="n">situation</span><span class="o">...</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">describe</span> <span class="n">pod</span> <span class="err">服务名</span>  <span class="o">|</span> <span class="n">grep</span> <span class="ne">Image</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">5.</span><span class="err">查看服务资源：</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">get</span> <span class="n">svc</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">hakkero</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">6.</span><span class="err">修改服务资源：</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">edit</span> <span class="n">svc</span> <span class="n">hakkero</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">7.</span><span class="err">改状态机：</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">edit</span> <span class="n">svc</span> <span class="n">hakkero</span>
+</span></span><span class="line"><span class="cl"><span class="n">type</span><span class="p">:</span> <span class="n">ClusterIP</span> <span class="err">改为</span> <span class="n">NodePort</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">8.</span><span class="err">查看文件：</span>
+</span></span><span class="line"><span class="cl"><span class="n">cat</span> <span class="err">文件名</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">9.</span><span class="err">在目录下创建文件夹：</span>
+</span></span><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="err">目录名</span>
+</span></span><span class="line"><span class="cl"><span class="n">touch</span> <span class="err">文件名</span><span class="o">.</span><span class="n">txt</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">10.</span><span class="err">进入文件：</span>
+</span></span><span class="line"><span class="cl"><span class="n">vim</span> <span class="err">文件路径</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">11.</span><span class="err">删除文件</span>
+</span></span><span class="line"><span class="cl"><span class="err">（</span><span class="mi">1</span><span class="err">）进到目录下</span>
+</span></span><span class="line"><span class="cl"><span class="err">（</span><span class="mi">2</span><span class="err">）</span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">./</span><span class="err">文件名</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">12.</span><span class="err">复制文件：</span>
+</span></span><span class="line"><span class="cl"><span class="n">cp</span> <span class="o">./</span><span class="n">add_incident</span><span class="o">.</span><span class="n">yaml</span> <span class="n">add_incident</span><span class="o">.</span><span class="n">yaml111</span><span class="err">（本目录下）</span>
+</span></span><span class="line"><span class="cl"><span class="n">cp</span> <span class="o">./</span><span class="n">add_incident_1001</span><span class="o">.</span><span class="n">yaml</span>  <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">s</span><span class="o">/</span><span class="n">services</span><span class="o">/</span><span class="n">ts_config</span><span class="o">/</span><span class="n">ts</span><span class="o">-</span><span class="n">zeus</span><span class="o">/</span><span class="err">（新目录下）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">13.</span><span class="err">运行可执行文件：</span>
+</span></span><span class="line"><span class="cl"><span class="err">（</span><span class="mi">1</span><span class="err">）到目录下</span>    <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">s</span><span class="o">/</span><span class="n">services</span><span class="o">/</span><span class="n">ts_config</span><span class="o">/</span><span class="n">ts</span><span class="o">-</span><span class="n">zeus</span>
+</span></span><span class="line"><span class="cl"><span class="err">（</span><span class="mi">2</span><span class="err">）执行</span>      <span class="o">./</span><span class="n">zeus</span><span class="o">-</span><span class="n">permission</span><span class="o">-</span><span class="n">sdk</span> <span class="o">-</span><span class="n">path</span> <span class="n">add_weave_plan</span><span class="o">.</span><span class="n">yaml</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">14.</span><span class="err">查看</span><span class="n">user</span><span class="o">-</span><span class="n">info信息</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">logs</span> <span class="o">-</span><span class="n">f</span> <span class="n">gateway</span><span class="o">-</span><span class="mi">6856965</span><span class="n">d9f</span><span class="o">-</span><span class="mi">7</span><span class="n">ckww</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">user</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">15.</span><span class="err">网关</span><span class="n">pod</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">get</span> <span class="n">pod</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">gate</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">16.</span><span class="err">后台服务查数据库：</span>
+</span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">PGPASSWORD</span><span class="o">=</span><span class="s1">&#39;A7GaKXT3JEY3_Qrh&#39;</span> <span class="o">&amp;&amp;</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">s</span><span class="o">/</span><span class="n">services</span><span class="o">/</span><span class="n">pgsql</span><span class="o">/</span><span class="n">server</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">psql</span> <span class="o">-</span><span class="n">U</span> <span class="n">postgres</span> <span class="o">-</span><span class="n">p</span> <span class="mi">15432</span> <span class="o">-</span><span class="n">d</span> <span class="n">postgres</span><span class="p">(</span><span class="err">数据库名</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">17.</span><span class="err">连接数据库</span><span class="n">ip加白名单</span>
+</span></span><span class="line"><span class="cl"><span class="n">iptables</span> <span class="o">-</span><span class="n">I</span> <span class="n">INPUT</span> <span class="mi">1</span> <span class="o">-</span><span class="n">s</span>  <span class="mf">10.43</span><span class="o">.</span><span class="mf">185.114</span> <span class="o">-</span><span class="n">p</span> <span class="n">tcp</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+</span></span><span class="line"><span class="cl"><span class="n">iptables</span> <span class="o">-</span><span class="n">I</span> <span class="n">INPUT</span> <span class="o">-</span><span class="n">s</span> <span class="mf">10.43</span><span class="o">.</span><span class="mf">185.114</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+</span></span><span class="line"><span class="cl"><span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">mangle</span> <span class="o">-</span><span class="n">I</span> <span class="n">PREROUTING</span> <span class="o">-</span><span class="n">s</span> <span class="mf">10.43</span><span class="o">.</span><span class="mf">185.114</span> <span class="o">-</span><span class="n">j</span> <span class="n">ACCEPT</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">18.</span><span class="err">进入</span><span class="n">k8s容器</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">exec</span> <span class="o">-</span><span class="n">it</span> <span class="n">framework</span><span class="o">-</span><span class="n">message</span><span class="o">-</span><span class="n">center</span><span class="o">-</span><span class="mi">5</span><span class="n">b5f676c6d</span><span class="o">-</span><span class="n">mj9l7</span> <span class="o">--</span> <span class="n">bash</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">19.</span><span class="err">查看分布在哪个节点：</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">get</span> <span class="n">pod</span> <span class="o">-</span><span class="n">o</span> <span class="n">wide</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">app</span>
+</span></span><span class="line"><span class="cl"><span class="err">查看系统</span><span class="n">hosts文件内容</span><span class="p">(</span><span class="err">包含节点</span><span class="n">ip</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">hosts</span>
+</span></span><span class="line"><span class="cl"><span class="err">查看服务的端口号信息</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">get</span> <span class="n">svc</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">analysis</span><span class="o">-</span><span class="n">search</span>
+</span></span><span class="line"><span class="cl"><span class="err">修改配置文件暴露服务端口</span>  <span class="err">将该配置属性改</span><span class="n">type</span><span class="p">:</span> <span class="n">ClusterIP修为NodePort</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">edit</span> <span class="n">svc</span> <span class="n">analysis</span><span class="o">-</span><span class="n">search</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">查看</span><span class="n">k8s集群节点信息</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">get</span> <span class="n">nodes</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mf">20.</span><span class="err">查看日志：</span>
+</span></span><span class="line"><span class="cl"><span class="n">kubectl</span> <span class="n">logs</span> <span class="n">framework</span><span class="o">-</span><span class="n">message</span><span class="o">-</span><span class="n">center</span><span class="o">-</span><span class="mi">6</span><span class="n">bb87f68cf</span><span class="o">-</span><span class="mi">6</span><span class="n">q8r4</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">C</span> <span class="mi">20</span> <span class="s1">&#39;GENIF202509227&#39;</span>
+</span></span></code></pre></div><h4 id="4后台账号">
+<a class="header-anchor" href="#4%e5%90%8e%e5%8f%b0%e8%b4%a6%e5%8f%b7"></a>
+4.后台账号
+</h4><p><code>situation-configs/platform/env_single/cluster.ini</code></p>
+        
+        <hr><p>本文2025-09-10首发于<a href='https://lan-ke-people.github.io/lanke-hugo.github.io/'>烂柯的 Blog</a>，最后修改于2025-12-04</p>]]></description><category>work book</category></item></channel></rss>
